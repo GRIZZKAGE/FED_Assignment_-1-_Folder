@@ -1,0 +1,705 @@
+
+:root {
+  --text: #f7fdfd;
+--background: #150c25;
+--primary: #df6868;
+--secondary: #dfe2e2;
+--accent: #d53939;
+}
+
+
+header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: var(--background);
+  justify-content: flex-end;
+   
+}
+  
+
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--background);
+  background-color: var(--background);
+  margin: 0;
+}
+
+
+.logo {
+  order: -1;
+  
+}
+
+.logo img {
+  height: 100px; /* Adjust height as needed */
+  width: auto;
+  display: block;
+}
+
+/* Adjusted Nav Styles with hover effects and formatting */
+
+nav{
+  order: 2 ;
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+  padding: 15px;
+  background-color: var(--background);
+  border-radius: 20px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin:0 ;
+  display: flex;
+  justify-content: flex-end; 
+  width: 100%;
+}
+
+nav ul li {
+  margin-right: 30px; /* Increased margin for more spacing */
+  position: relative; /* Added for creating a hover effect */
+}
+
+nav ul li:last-child {
+  margin-right: 0; /* Remove margin for the last item */
+}
+
+nav ul li a {
+  display: block;
+  color: var(--text);
+  text-decoration: none;
+  position: relative; /* Added for creating a hover effect */
+}
+
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary);
+  transform: scaleX(0); /* Initial scale for the underline effect */
+  transition: transform 0.3s ease-in-out;
+}
+
+nav ul li a:hover::after {
+  transform: scaleX(1); /* Fully display the underline on hover */
+}
+
+nav ul li:hover > ul {
+  display: block; /* Display submenu on hover */
+}
+
+/* Submenu Styles */
+nav ul ul {
+  display: none; /* Hide submenu by default */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--primary);
+  min-width: 150px;
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul ul li {
+  margin: 0;
+}
+
+nav ul ul li a {
+  padding: 10px 20px;
+  color: var(--primary);
+  text-decoration: none;
+  display: block;
+}
+
+nav ul ul li a:hover {
+  background-color: var(--primary);
+  color: var(--background);
+}
+
+
+/* Main Items */
+
+.welcome-section {
+  position: relative;
+    background-color: var(--primary); /* Background color for the section */
+    color: var(--secondary); /* Text color */ 
+    text-align: center;
+    padding: 60px 0; /* Increased padding for better visibility */
+    margin:0%;
+    overflow: hidden;
+    z-index: -1;
+    height: 400px;
+     /* Using a linear gradient for the background overlay */
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/images/pexels-soumil-kumar-735911.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.welcome-section:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%; /* Move left beyond the element's starting point */
+  width: 300%; /* Extend width to create diagonal effect */
+  height: 100%;
+  background-color: inherit;
+  transform-origin: 0 0;
+  z-index: -1;
+ 
+}
+
+
+.welcome-section h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.welcome-section h2::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%; /* Move left beyond the element's starting point */
+  width: 300%; /* Extend width to create diagonal effect */
+  height: 100%;
+  background-color: inherit;
+  transform-origin: 0 0;
+
+}
+
+  
+
+.welcome-section p {
+  font-size: 1.2em;
+  
+}
+
+
+.intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 20px;
+  background: var(--background);
+  color: var(--text);
+}
+
+.introbox {
+  flex: 1;
+  padding: 20px;
+  margin: 10px;
+  width: 100%;
+  height:300px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  transform: skewX(-15deg);
+  text-align: left;
+  transition: transform 0.3s ease-in-out;
+}
+
+.introbox:hover {
+  transform: skewX(-15deg) scale(1.02);
+}
+
+/* Individual text styles */
+.introbox h3 {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.introbox p {
+  margin-bottom: 15px;
+}
+
+
+
+.choose {
+  background-color: var(--primary);
+  margin: 0;
+  max-width: 100%;
+  padding: 20px;
+  text-align: center;
+  font-size: medium;
+  justify-content: end;
+  height: 600px;
+  position: relative;
+  overflow: hidden;
+  background-size: 100%;
+  background-position: center;
+  animation: slideshow 20s infinite; /* Change images every 20 seconds */
+
+  position: relative;
+  color: var(--text);
+
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity here */
+  z-index: -1; /* Place the overlay beneath the content */
+}
+
+.choose::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity here */
+  z-index: -1; /* Place the overlay beneath the content */
+}
+
+@keyframes slideshow {
+  0% { background-image: url('images/Apexteam.jpg'); } /* Replace with your image URLs */
+  25% { background-image: url('images/fortnite2.jpg'); }
+  50% { background-image: url('images/GOW.webp'); }
+  75% { background-image: url('images/RE4.jpg'); }
+  100%{ background-image: url('/images/Apexteam.jpg'); }
+}
+
+
+.choose h1{
+  font-size: 2.5em;
+  position: relative;
+  z-index: 1;
+  color:var(--secondary); 
+  margin-top: 200px; 
+}
+
+.choose p {
+  font-size: 1.2em; /* Increase font size for p */
+  position: relative;
+  z-index: 1; 
+}
+
+
+
+.choose:hover {
+  transform: scale(1.05); /* Scale up by 5% on hover */
+}
+
+
+
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-around;
+  align-items: center;
+  margin: auto;
+  background-color: var(--background);
+  width: 100%;
+  height: 500px;
+  /* Set a maximum width for better responsiveness */
+  margin: 0 auto; /* Center the categories */
+  padding: 20px 0;
+}
+
+.category-box {
+  text-align: center;
+  padding: 20px;
+  border: 1px solid var(--text);
+  border-radius: 5px;
+  width: calc(33.33% - 20px);
+  margin: 10px;
+  text-decoration: none;
+  color: var(--secondary);
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.categories::after {
+  content: "";
+  flex: auto;
+}
+
+.categories a:nth-child(-n+3) {
+  margin-bottom: 20px;
+}
+
+.category-box:hover {
+  background-color: var(--primary);
+  /* Add other hover effects if needed */
+}
+
+
+
+
+/* About page */
+.section-box {
+  background-color: var(--primary);
+  color: var(--text);
+  border-radius: 15px;
+  box-shadow: 0 0 10px var(--accent);
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+  .section-box:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Paragraph styles within sections */
+  .section-box p {
+      margin-bottom: 10px;
+      font-size: 18px; /* Increased font size */
+      line-height: 1.6;
+  }
+
+  /* Scrolling section boxes */
+  .section-box.scrolling {
+      max-height: 400px; /* Set the maximum height */
+      overflow-y: auto; /* Enable vertical scrolling */
+  }
+
+.section-title {
+  font-size: 28px; /* Increase section title font size */
+  margin-bottom: 15px; /* Adjust margin as needed */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+}
+
+
+
+/* Contact Information Section */
+.contact-info {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: var(--background);
+  color: var(--text);
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 10px;
+  box-shadow: 0 0 10px var(--secondary);
+  margin: 50px auto;
+  max-width: 500px;
+}
+
+.contact-info:hover {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+.contact-info h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+.contact-details h3 {
+  font-size: 1.5em;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.contact-details p {
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
+
+
+/* Footer Styles with specific colors */
+footer {
+  background-color: var(--primary);
+  color: var(--background);
+  text-align: center;
+  padding: 10px 0;
+  bottom: 0;
+  width: 100%;
+  position: fixed;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* Your other existing styles for footer content */
+}
+
+.privacy-policy {
+  order: 1; /* Push to the beginning (left) */
+  /* Additional styles for privacy policy text */
+}
+
+.our-social-media {
+  order: 2; /* Push to the end (right) */
+  /* Additional styles for social media icons */
+}
+
+.our-social-media a {
+  display: inline-block;
+  margin-right: 10px; /* Adjust spacing between icons as needed */
+}
+
+.our-social-media img {
+  width: 40px; /* Adjust the width and height as needed */
+  height: 40px; /* This ensures uniformity */
+  border-radius: 50%; /* Optional: Rounded corners for circular icons */
+}
+
+
+
+
+/* Indivual pages Css */
+
+
+.game-categories {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.top-games {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0;
+  padding: 20px;
+  background: var(--background);
+  color: var(--text);
+}
+
+.game-box {
+  flex: 1;
+  padding: 10px;
+  margin: 5px;
+  width: 100%;
+  height: 70px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  transform: skewX(-15deg);
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.game-box:hover {
+  transform: skewX(-15deg) scale(1.02);
+}
+
+.game-box h3 {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: var(--text);
+}
+
+.game{
+   background-color: var(--primary);
+   border-radius: 15px;
+   box-shadow: 0 0 10px var(--accent);
+   padding: 20px;
+   margin: 20px auto;
+   max-width: 80%;
+   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  
+}
+
+
+.game p {
+  margin-bottom: 10px;
+  font-size: 18px; /* Increased font size */
+  line-height: 1.6;
+}
+
+/* Scrolling section boxes */
+.game.scrolling {
+  max-height: 400px; /* Set the maximum height */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+
+.learnmore{
+  position: relative;
+    background-color: var(--primary); /* Background color for the section */
+    color: var(--secondary); /* Text color */ 
+    text-align: center;
+    padding: 60px 0; /* Increased padding for better visibility */
+    margin:0%;
+    overflow: hidden;
+    z-index: -1;
+    height: 400px;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/images/pexels-photo-1637438.webp');
+    background-size: cover;
+    background-position: center;
+}
+.learnmore:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%; /* Move left beyond the element's starting point */
+  width: 300%; /* Extend width to create diagonal effect */
+  height: 100%;
+  background-color: inherit;
+  transform-origin: 0 0;
+  z-index: -1;
+ 
+}
+
+.videos {
+
+  display: flex;
+  justify-content: center;
+  height: 600px;
+  padding: 0 20px; 
+  overflow: hidden;
+  background-color: var(--primary);
+}
+
+.video-item {
+  width: calc(30% - 20px); /* Adjust width as needed */
+  border: 2px solid var(--primary); /* Add border around the video item */
+  border-radius: 15px;
+   /* Adjust margin as needed */
+  box-sizing: border-box; /* Include padding and border in the width */
+  overflow: hidden;
+  transform: skew(-15deg);
+  margin-left: 40px;
+  margin-bottom: 10px;
+  
+}
+
+.video-item iframe {
+  width: 100%; /* Make the video fill its container */
+  height: 100%; /* Make the video fill its container */
+   /* Counter-skew the video to maintain original shape */
+}
+
+.videos {
+  overflow-x: hidden;
+}
+
+.comment-form{
+  background-color: var(--primary);
+  text-align: center;
+}
+#comments{
+  background-color: var(--background);
+  color: var(--primary);
+}
+
+#submittedData{
+  background-color: var(--primary);
+  border-radius: 15px;
+  text-align: center;
+  margin: 20px;
+  border: 2px solid var(--text);
+}
+
+
+
+
+
+
+/* Media Query for Tablets (768px - 1023px) */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  header {
+    justify-content: center; 
+  }
+
+  .logo img {
+    height: 80px; 
+  }
+
+  nav {
+    padding: 10px; 
+  }
+
+  .welcome-section {
+    height: 300px; 
+    padding: 40px 0; 
+  }
+
+  .welcome-section h2 {
+    font-size: 1.8em; 
+  }
+  .intro{
+    font-size: 1.8em;
+  }
+  .introbox {
+    width: 90%; 
+    height: 250px; 
+    font-size: xx-small;
+  }
+  .introbox a {
+    width: 90%; 
+    height: 250px; 
+    font-size: xx-small;
+  }
+  .introbox p {
+    width: 90%; 
+    height: 250px; 
+    font-size: xx-small;
+  }
+
+
+  .choose {
+    height: 500px; 
+    margin-top: 100px; 
+  }
+
+  .categories {
+    height: auto; 
+  }
+
+  .section-box {
+    padding: 15px;
+  }
+}
+
+/* Media Query for Mobile Devices (up to 767px) */
+@media screen and (max-width:767px) {
+  header {
+    justify-content: center; 
+  }
+
+  .logo img {
+    height: 60px; 
+  }
+
+  nav {
+    padding: 5px; 
+  }
+
+  .welcome-section {
+    height: 200px; 
+    padding: 20px 0; 
+  }
+
+  .welcome-section h2 {
+    font-size: 1.5em;
+  }
+
+  .introbox {
+    width: 90%; 
+    height: 200px;
+  }
+  .introbox a {
+
+    font-size:0.5em ;
+  }
+
+
+  .choose {
+    height: 400px; 
+    margin-top: 50px;
+  }
+
+  .categories {
+    height: auto;
+  }
+
+  .section-box {
+    padding: 10px;
+}
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Comments</title>
+  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+        <img src="/images/logo_transparent.png" alt="Your Logo">
+    </div>
+    <nav>
+        
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="Comments.html">Your Thoughts</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+<h2>Leave Your Comments</h2>
+
+<form class="comment-form" onsubmit="return handleFormSubmit()">
+  <label for="category">Select Category:</label>
+  <select id="category" name="category">
+    <option value="">Select</option>
+    <option value="FPS">FPS</option>
+    <option value="Battle Royale">Battle Royale</option>
+    <option value="Sandbox">Sandbox</option>
+    <option value="Fighting">Fighting</option>
+    <option value="Horror">Horror</option>
+    <option value="Role Playing Games">Role Playing Games</option>
+  </select>
+  <br><br>
+
+  <label for="comments">Comments:</label><br>
+  <textarea id="comments" name="comments" rows="4" cols="50"></textarea>
+  <br><br>
+
+  <input type="submit" value="Submit">
+</form>
+
+<div id="submittedData">
+  <!-- Display submitted data here -->
+</div>
+
+</body>
+
+
+<footer>
+  <div class="footer-content">
+
+      <div class="privacy-policy">
+          <a >Privacy Policy</a>
+      </div>
+      
+      <div class="our-social-media">
+          <a href="https://www.facebook.com/YourPage" target="_blank" title="Facebook">
+              <img src="/images/facebook.png" alt="Facebook">
+          </a>
+          <a href="https://www.instagram.com/YourPage" target="_blank" title="Instagram">
+              <img src="/images/insta.png" alt="Instagram">
+          </a>
+          <a href="https://www.youtube.com/YourChannel" target="_blank" title="YouTube">
+              <img src="/images/redbutton.png" alt="YouTube">
+          </a>
+          <!-- Add more social media links/icons as needed -->
+      </div>
+  </div>
+   
+</footer>
+</html>
